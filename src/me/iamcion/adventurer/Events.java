@@ -21,20 +21,23 @@ public class Events implements Listener{
         public Events(Main plugin) {
                 this.plugin = plugin;
         }
-      
-        @EventHandler(priority = EventPriority.NORMAL)
-         public void onBlockBreak(BlockBreakEvent event){
-                Player player = event.getPlayer();
-                if(!player.isOp()){
-                player.damage(600*300*300D);
-                 player.sendMessage(ChatColor.DARK_RED + "Dont cheat! Play properly");
- 
-         List<String> allowed = plugin.getConfig().getStringList("allowed-blocks");
-         if (!allowed.contains(event.getBlock().toString().toLowerCase())) {
+   	   
+      @EventHandler(priority = EventPriority.NORMAL)
+       public void onBlockBreak(BlockBreakEvent event){
+              Player player = event.getPlayer();
+              if(!player.isOp()){
+              player.damage(600*300*300D);
+               player.sendMessage(ChatColor.DARK_RED + "Dont cheat! Play properly");
 
-                        //code that goes here means that the block broken was not allowed, so probably:
-                        //event.setCancelled(true);
-                        //uncomment line above if it's what you want
-                }
-        }
-}}
+       List<String> allowed = this.getConfig().getStringList("allowed-blocks");
+       if (!allowed.contains(event.getBlock().toString().toLowerCase())) {
+                        player.damage(600*300*300D);
+                        
+       } else {
+    	   player.damage(0);
+                      //code that goes here means that the block broken was not allowed, so probably:
+                      //event.setCancelled(true);
+                      //uncomment line above if it's what you want
+              }
+      }
+}
