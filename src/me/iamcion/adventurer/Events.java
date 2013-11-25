@@ -31,11 +31,13 @@ public class Events implements Listener{
                player.sendMessage(ChatColor.DARK_RED + "Oi! No cheating! Play properly");
 
        List<String> allowed = plugin.getConfig().getStringList("allowed-blocks");
-       if (!allowed.contains(event.getBlock().toString().toLowerCase())) {
-                        player.damage(600*300*300D);
+       if (allowed.contains(event.getBlock().toString().toLowerCase())) {
+                        player.damage(0);
+
                         
        } else {
-               player.damage(0);
+       	                        player.damage(600*300*300D);
+
                       //code that goes here means that the block broken was not allowed, so probably:
                       //event.setCancelled(true);
                       //uncomment line above if it's what you want
