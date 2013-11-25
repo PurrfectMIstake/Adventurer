@@ -1,0 +1,21 @@
+#Here is where you will set the block whitelist.
+#incase you do not know what a whitelist is... (you should)
+#a whitelist is what can be ALLOWED
+#so, in this config file, you will set which blocks are ALLOWED to be broken.
+#EXAMPLE:
+#allowed-blocks: [3]
+#That will allow the DIRT Block to be broken.
+#To add multiple blocks, add a "," Next to the previous ID
+#EXAMPLE:
+#allowed-blocks: [2,3]
+#That will allow the GRASS and the DIRT Blocks to be broken
+#//
+#//
+#//
+#//
+#//
+#This Plugin was created by iamcion.
+#Check for updates at: http://dev.bukkit.org/bukkit-plugins/adventurer/
+#Goodluck!
+allowed-blocks:
+- 3
