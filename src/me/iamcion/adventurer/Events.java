@@ -22,7 +22,6 @@ public class Events implements Listener{
         public Events(Main plugin) {
                 this.plugin = plugin;
         }
-      @SuppressWarnings("deprecation")
 	@EventHandler(priority = EventPriority.NORMAL)
        public void onBlockBreak(BlockBreakEvent event){
               Player player = event.getPlayer();
@@ -35,7 +34,7 @@ public class Events implements Listener{
                         player.damage(600*300*300D);
                         
        } else {
-               player.damage(0);
+               player.damage(0.0);
                       //code that goes here means that the block broken was not allowed, so probably:
                       //event.setCancelled(true);
                       //uncomment line above if it's what you want
